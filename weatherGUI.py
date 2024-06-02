@@ -132,7 +132,7 @@ try:
         print("Internet is off")
         Frame(w, width=800, height=400, bg='white').place(x=0, y=0)
         global imgNoInternet
-        imgNoInternet = ImageTk.PhotoImage(Image.open("Wireless-Gray-No-Internet-Connection-Signal-Icon-on-transparent-background-PNG.png").resize((400,400)))
+        imgNoInternet = ImageTk.PhotoImage(Image.open("NoConnect.png").resize((400,400)))
         Label(w, image=imgNoInternet, bg='white', border=0).pack(expand=True)
 except:
     messagebox.showinfo("", 'Error!')
