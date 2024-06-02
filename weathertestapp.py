@@ -50,7 +50,10 @@ class App:
         def Search():
             name = str(e1.get())
             e1.delete(0,'end')
-            self.label(name)
+            if checkConnect() == True:
+                self.label(name)
+            else:
+                app.NoConnectPrompt()
 
         e1 = Entry(self.root, width=21, fg='white', bg='#353535', border=0)
         e1.config(font=('Calibry',12))
@@ -125,7 +128,8 @@ class App:
         imgNoInternet = ImageTk.PhotoImage(Image.open("NoConnect.png").resize((400,400)))
         Frame(self.root, width=800, height=400, bg='white').place(x=0, y=0)
         Label(self.root, image=imgNoInternet, bg='white', border=0).pack(expand=True)
-    
+        #create Button back to search if there is connect
+        
     def mainloop(self):
         self.root.mainloop()     
 
